@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <TextView
+        android:id="@+id/tv_day"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:gravity="center"
+        android:text="пн"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/textview_border"/>
+
+    <TextView
+        android:id="@+id/tv_time_first_lesson"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_day"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center"
+        android:text="8:00\n10:25"
+        android:background="@drawable/textview_border"/>
+
+    <TextView
+        android:id="@+id/tv_lesson_one"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintTop_toBottomOf="@id/tv_day"
+        app:layout_constraintStart_toEndOf="@id/tv_time_first_lesson"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:text="ММИС"
+        android:background="@drawable/textview_border"/>
+
+    <TextView
+        android:id="@+id/tv_time_second_lesson"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_time_first_lesson"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center"
+        android:text="10:40\n12:15"
+        android:background="@drawable/textview_border"/>
+
+    <TextView
+        android:id="@+id/tv_lesson_two"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintTop_toBottomOf="@id/tv_lesson_one"
+        app:layout_constraintStart_toEndOf="@id/tv_time_first_lesson"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:text="ММИС"
+        android:background="@drawable/textview_border"/>
+
+    <TextView
+        android:id="@+id/tv_time_third_lesson"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_time_second_lesson"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center"
+        android:text="13:15\n14:50"
+        android:background="@drawable/textview_border"/>
+
+    <TextView
+        android:id="@+id/tv_lesson_three"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintTop_toBottomOf="@id/tv_lesson_two"
+        app:layout_constraintStart_toEndOf="@id/tv_time_first_lesson"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:text=""
+        android:background="@drawable/textview_border"/>
+
+    <TextView
+        android:id="@+id/tv_time_fourth_lesson"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_time_third_lesson"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center"
+        android:text="15:00\n16:35"
+        android:background="@drawable/textview_border"/>
+
+    <TextView
+        android:id="@+id/tv_lesson_four"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintTop_toBottomOf="@id/tv_lesson_three"
+        app:layout_constraintStart_toEndOf="@id/tv_time_first_lesson"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:text=""
+        android:background="@drawable/textview_border"/>
+
+    <TextView
+        android:id="@+id/tv_time_fifth_lesson"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_time_fourth_lesson"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center"
+        android:text="16:45\n18:20"
+        android:background="@drawable/textview_border"/>
+
+    <TextView
+        android:id="@+id/tv_lesson_five"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintTop_toBottomOf="@id/tv_lesson_four"
+        app:layout_constraintStart_toEndOf="@id/tv_time_first_lesson"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:text=""
+        android:background="@drawable/textview_border"/>
+
+    <TextView
+        android:id="@+id/tv_time_sixth_lesson"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_time_fifth_lesson"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center"
+        android:text="18:30\n20:05"
+        android:background="@drawable/textview_border"/>
+
+    <TextView
+        android:id="@+id/tv_lesson_six"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintTop_toBottomOf="@id/tv_lesson_five"
+        app:layout_constraintStart_toEndOf="@id/tv_time_first_lesson"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:text=""
+        android:background="@drawable/textview_border"/>
+
+    <TextView
+        android:id="@+id/tv_time_seventh_lesson"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_time_sixth_lesson"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center"
+        android:text="20:15\n21:50"
+        android:background="@drawable/textview_border"/>
+
+    <TextView
+        android:id="@+id/tv_lesson_seven"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintTop_toBottomOf="@id/tv_lesson_six"
+        app:layout_constraintStart_toEndOf="@id/tv_time_first_lesson"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:text=""
+        android:background="@drawable/textview_border"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
