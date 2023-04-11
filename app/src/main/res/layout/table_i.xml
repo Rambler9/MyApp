@@ -35,6 +35,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv_day"
         app:layout_constraintStart_toEndOf="@id/tv_time_first_lesson"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/tv_time_first_lesson"
         android:gravity="center"
         android:text="ММИС"
         android:background="@drawable/textview_border"/>
