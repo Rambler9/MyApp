@@ -37,21 +37,21 @@ public class TableAdapt extends RecyclerView.Adapter<TableAdapt.TableAdaptViewHo
 
         holder.dayOfWeek.setText(listItem.getDayOfWeek());
 
-        holder.lesson.setText(listItem.getFirstLesson());
-        holder.lesson.setText(listItem.getSecondLesson());
-        holder.lesson.setText(listItem.getThirdLesson());
-        holder.lesson.setText(listItem.getFourthLesson());
-        holder.lesson.setText(listItem.getFifthLesson());
-        holder.lesson.setText(listItem.getSixthLesson());
-        holder.lesson.setText(listItem.getSeventhLesson());
+        holder.lessonOne.setText(listItem.getFirstLesson());
+        holder.lessonTwo.setText(listItem.getSecondLesson());
+        holder.lessonThree.setText(listItem.getThirdLesson());
+        holder.lessonFour.setText(listItem.getFourthLesson());
+        holder.lessonFive.setText(listItem.getFifthLesson());
+        holder.lessonSix.setText(listItem.getSixthLesson());
+        holder.lessonSeven.setText(listItem.getSeventhLesson());
 
-        holder.timeOfLessons.setText(listItem.getTimeFirstLesson());
-        holder.timeOfLessons.setText(listItem.getTimeSecondLesson());
-        holder.timeOfLessons.setText(listItem.getTimeThirdLesson());
-        holder.timeOfLessons.setText(listItem.getTimeFourthLesson());
-        holder.timeOfLessons.setText(listItem.getTimeFifthLesson());
-        holder.timeOfLessons.setText(listItem.getTimeSixthLesson());
-        holder.timeOfLessons.setText(listItem.getTimeSeventhLesson());
+        holder.timeOfLessonsOne.setText(listItem.getTimeFirstLesson());
+        holder.timeOfLessonsTwo.setText(listItem.getTimeSecondLesson());
+        holder.timeOfLessonsThree.setText(listItem.getTimeThirdLesson());
+        holder.timeOfLessonsFour.setText(listItem.getTimeFourthLesson());
+        holder.timeOfLessonsFive.setText(listItem.getTimeFifthLesson());
+        holder.timeOfLessonsSix.setText(listItem.getTimeSixthLesson());
+        holder.timeOfLessonsSeven.setText(listItem.getTimeSeventhLesson());
     }
 
     @Override
@@ -62,16 +62,41 @@ public class TableAdapt extends RecyclerView.Adapter<TableAdapt.TableAdaptViewHo
     public class TableAdaptViewHolder extends RecyclerView.ViewHolder
     {
         final TextView dayOfWeek;
-        final TextView timeOfLessons;
-        final TextView lesson;
+        final TextView timeOfLessonsOne;
+        final TextView timeOfLessonsTwo;
+        final TextView timeOfLessonsThree;
+        final TextView timeOfLessonsFour;
+        final TextView timeOfLessonsFive;
+        final TextView timeOfLessonsSix;
+        final TextView timeOfLessonsSeven;
+        final TextView lessonOne;
+        final TextView lessonTwo;
+        final TextView lessonThree;
+        final TextView lessonFour;
+        final TextView lessonFive;
+        final TextView lessonSix;
+        final TextView lessonSeven;
         TableAdaptViewHolder(View view)
         {
             super(view);
             dayOfWeek=view.findViewById(R.id.tv_day);
 
-            timeOfLessons=view.findViewById(R.id.tv_time_first_lesson);
+            timeOfLessonsOne=view.findViewById(R.id.tv_time_first_lesson);
+            timeOfLessonsTwo=view.findViewById(R.id.tv_time_second_lesson);
+            timeOfLessonsThree=view.findViewById(R.id.tv_time_third_lesson);
+            timeOfLessonsFour=view.findViewById(R.id.tv_time_fourth_lesson);
+            timeOfLessonsFive=view.findViewById(R.id.tv_time_fifth_lesson);
+            timeOfLessonsSix=view.findViewById(R.id.tv_time_sixth_lesson);
+            timeOfLessonsSeven=view.findViewById(R.id.tv_time_seventh_lesson);
 
-            lesson=view.findViewById(R.id.tv_lesson_one);
+
+            lessonOne=view.findViewById(R.id.tv_lesson_one);
+            lessonTwo=view.findViewById(R.id.tv_lesson_two);
+            lessonThree=view.findViewById(R.id.tv_lesson_three);
+            lessonFour=view.findViewById(R.id.tv_lesson_four);
+            lessonFive=view.findViewById(R.id.tv_lesson_five);
+            lessonSix=view.findViewById(R.id.tv_lesson_six);
+            lessonSeven=view.findViewById(R.id.tv_lesson_seven);
         }
     }
 }

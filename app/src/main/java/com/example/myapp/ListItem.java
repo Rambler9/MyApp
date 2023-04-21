@@ -1,7 +1,13 @@
 package com.example.myapp;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity
 public class ListItem
 {
+    @PrimaryKey(autoGenerate = true)
+            private long id;
     String firstLesson;
     String secondLesson;
     String thirdLesson;
@@ -80,4 +86,7 @@ public class ListItem
     public String getDayOfWeek() {return dayOfWeek;}
 
     public void setDayOfWeek(String dayOfWeek) {this.dayOfWeek = dayOfWeek;}
+
+    public long getId(){return id;}
+    public void setId(long id){this.id=id;}
 }
