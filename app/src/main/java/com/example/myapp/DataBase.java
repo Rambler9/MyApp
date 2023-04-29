@@ -22,6 +22,10 @@ public class DataBase {
         DataBase.DataLoaderAsyngTask dataLoaderAsyngTask=new DataBase.DataLoaderAsyngTask(loadingCallBack);
         dataLoaderAsyngTask.execute();
     }
+    public void loadItem(LoadingItemCallBack loadingItemCallBack, Long id){
+        DataBase.DataItemLoaderAsyngTask dataLoaderAsyngTask=new DataBase.DataItemLoaderAsyngTask(loadingItemCallBack, id);
+        dataLoaderAsyngTask.execute();
+    }
     private static class DataLoaderAsyngTask extends AsyncTask<
             Void, Void, List<ListItem>>{
 private final LoadingCallBack loadingCallBack;
@@ -48,4 +52,30 @@ EntityDao entityDao=appDataBase.entityDao();
             entityDao.insert(item);
         }
     }
+
+    private static class DataItemLoaderAsyngTask extends AsyncTask<
+            Void, Void, ListItem>{
+        private final LoadingItemCallBack loadingCallBack;
+
+        private final Long id;
+        public DataItemLoaderAsyngTask(LoadingItemCallBack loadingCallBack, Long id){
+            this.loadingCallBack=loadingCallBack;
+            this.id=id;
+        }
+        @Override
+        protected ListItem doInBackground(Void... voids) {
+            AppDataBase appDataBase=MyApp.getInstance().getDataBase();
+            EntityDao entityDao=appDataBase.entityDao();
+            ListItem list=entityDao.getListItem(id);
+            return list;
+        }
+        @Override
+        protected void onPostExecute(ListItem list){
+            super.onPostExecute(list);
+            loadingCallBack.update(list);
+        }
+    }
+
 }
+
+

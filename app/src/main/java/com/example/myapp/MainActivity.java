@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -27,17 +28,24 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void update(List list) {
                 if(list==null ||list.size()==0){
-                   result[0] = createList();
-                  new Thread( new Runnable() {
-                       @Override
-                       public void run() {
-                           DataBase.newInstance().saveAll(result[0]);
-                       }
-                   }).start();
-                } else{
                     result[0]=list;
+
+                } else{
+                    result[0] = createList();
+                    new Thread( new Runnable() {
+                        @Override
+                        public void run() {
+                            DataBase.newInstance().saveAll(result[0]);
+                        }
+                    }).start();
                 }
-                TableAdapt tableAdapt=new TableAdapt(context,result[0]);
+                OnItemCickList onItemCickList=new OnItemCickList() {
+                    @Override
+                    public void invoke(long id) {
+                        openDayOFWeek(id);
+                    }
+                };
+                TableAdapt tableAdapt=new TableAdapt(context,result[0], onItemCickList);
                 recyclerView.setAdapter(tableAdapt);
             }
         });
@@ -65,5 +73,10 @@ public class MainActivity extends AppCompatActivity {
                 "8:50\n10:25","10:40\n12:15","13:15\n14:50","15:00\n16:35",
                 "16:45\n18:20","18:30\n20:05","20:15\n21:50","сб, 22 апр."));
         return result;
+    }
+    private void openDayOFWeek(long id){
+        Intent intent=new Intent(this,DayOfWeekActivity.class);
+        intent.putExtra("id",id);
+        startActivity(intent);
     }
 }

@@ -16,10 +16,12 @@ public class TableAdapt extends RecyclerView.Adapter<TableAdapt.TableAdaptViewHo
 {
     private final LayoutInflater layoutInflater;
     private final List<ListItem> listItemList;
-    TableAdapt(Context context, List<ListItem> listItemList)
+    private final OnItemCickList onItemCickList;
+    TableAdapt(Context context, List<ListItem> listItemList, OnItemCickList onItemCickList)
     {
         this.layoutInflater=LayoutInflater.from(context);
         this.listItemList=listItemList;
+        this.onItemCickList=onItemCickList;
     }
 
     @NonNull
@@ -52,6 +54,8 @@ public class TableAdapt extends RecyclerView.Adapter<TableAdapt.TableAdaptViewHo
         holder.timeOfLessonsFive.setText(listItem.getTimeFifthLesson());
         holder.timeOfLessonsSix.setText(listItem.getTimeSixthLesson());
         holder.timeOfLessonsSeven.setText(listItem.getTimeSeventhLesson());
+
+        holder.bind(listItem);
     }
 
     @Override
@@ -76,9 +80,11 @@ public class TableAdapt extends RecyclerView.Adapter<TableAdapt.TableAdaptViewHo
         final TextView lessonFive;
         final TextView lessonSix;
         final TextView lessonSeven;
+        View view;
         TableAdaptViewHolder(View view)
         {
             super(view);
+            this.view=view;
             dayOfWeek=view.findViewById(R.id.tv_day);
 
             timeOfLessonsOne=view.findViewById(R.id.tv_time_first_lesson);
@@ -89,7 +95,6 @@ public class TableAdapt extends RecyclerView.Adapter<TableAdapt.TableAdaptViewHo
             timeOfLessonsSix=view.findViewById(R.id.tv_time_sixth_lesson);
             timeOfLessonsSeven=view.findViewById(R.id.tv_time_seventh_lesson);
 
-
             lessonOne=view.findViewById(R.id.tv_lesson_one);
             lessonTwo=view.findViewById(R.id.tv_lesson_two);
             lessonThree=view.findViewById(R.id.tv_lesson_three);
@@ -97,6 +102,18 @@ public class TableAdapt extends RecyclerView.Adapter<TableAdapt.TableAdaptViewHo
             lessonFive=view.findViewById(R.id.tv_lesson_five);
             lessonSix=view.findViewById(R.id.tv_lesson_six);
             lessonSeven=view.findViewById(R.id.tv_lesson_seven);
+
+
+        }
+        public void bind(ListItem listItem)
+        {
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onItemCickList.invoke(listItem.getId());
+                }
+            });
         }
     }
+
 }

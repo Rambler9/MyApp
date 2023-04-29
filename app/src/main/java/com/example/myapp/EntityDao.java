@@ -12,4 +12,6 @@ public interface EntityDao {
     List<ListItem> getAll();
     @Insert
     void insert(ListItem listItem);
+    @Query("SELECT * FROM listitem WHERE id=:curentId")
+    ListItem getListItem(Long curentId);
 }
