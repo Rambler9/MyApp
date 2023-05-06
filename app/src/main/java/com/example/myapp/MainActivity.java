@@ -28,9 +28,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void update(List list) {
                 if(list==null ||list.size()==0){
-                    result[0]=list;
-
-                } else{
                     result[0] = createList();
                     new Thread( new Runnable() {
                         @Override
@@ -38,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
                             DataBase.newInstance().saveAll(result[0]);
                         }
                     }).start();
+                } else{
+                    result[0]=list;
                 }
                 OnItemCickList onItemCickList=new OnItemCickList() {
                     @Override

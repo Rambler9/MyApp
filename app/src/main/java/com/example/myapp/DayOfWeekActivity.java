@@ -58,21 +58,21 @@ public class DayOfWeekActivity extends AppCompatActivity {
             public void update(ListItem listItem) {
                 dayOfWeek.setText(listItem.getDayOfWeek());
 
-                timeOfLessonsOne.setText(listItem.getDayOfWeek());
-                timeOfLessonsTwo.setText(listItem.getDayOfWeek());
-                timeOfLessonsThree.setText(listItem.getDayOfWeek());
-                timeOfLessonsFour.setText(listItem.getDayOfWeek());
-                timeOfLessonsFive.setText(listItem.getDayOfWeek());
-                timeOfLessonsSix.setText(listItem.getDayOfWeek());
-                timeOfLessonsSeven.setText(listItem.getDayOfWeek());
+                timeOfLessonsOne.setText(listItem.getTimeFirstLesson());
+                timeOfLessonsTwo.setText(listItem.getTimeSecondLesson());
+                timeOfLessonsThree.setText(listItem.getTimeThirdLesson());
+                timeOfLessonsFour.setText(listItem.getTimeFourthLesson());
+                timeOfLessonsFive.setText(listItem.getTimeFifthLesson());
+                timeOfLessonsSix.setText(listItem.getTimeSixthLesson());
+                timeOfLessonsSeven.setText(listItem.getTimeSeventhLesson());
 
-                lessonOne.setText(listItem.getDayOfWeek());
-                lessonTwo.setText(listItem.getDayOfWeek());
-                lessonThree.setText(listItem.getDayOfWeek());
-                lessonFour.setText(listItem.getDayOfWeek());
-                lessonFive.setText(listItem.getDayOfWeek());
-                lessonSix.setText(listItem.getDayOfWeek());
-                lessonSeven.setText(listItem.getDayOfWeek());
+                lessonOne.setText(listItem.getFirstLesson());
+                lessonTwo.setText(listItem.getSecondLesson());
+                lessonThree.setText(listItem.getThirdLesson());
+                lessonFour.setText(listItem.getFourthLesson());
+                lessonFive.setText(listItem.getFirstLesson());
+                lessonSix.setText(listItem.getSixthLesson());
+                lessonSeven.setText(listItem.getSeventhLesson());
             }
         };
         DataBase.newInstance().loadItem(loadingItemCallBack, id);
