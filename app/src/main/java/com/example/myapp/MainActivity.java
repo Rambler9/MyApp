@@ -9,16 +9,31 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
+Button firstWeek;
+Button secondWeek;
+boolean isSecondWeek;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        firstWeek=findViewById(R.id.weekOne);
+        secondWeek=findViewById(R.id.weekTwo);
+
+            isSecondWeek=getIntent().getExtras().getBoolean("week",false);
+
+        if(isSecondWeek){
+            secondWeek.setEnabled(true);
+            firstWeek.setEnabled(false);
+        }else{
+            firstWeek.setEnabled(true);
+            secondWeek.setEnabled(false);
+        }
         RecyclerView recyclerView=(RecyclerView) findViewById(R.id.wv_table);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -44,6 +59,13 @@ public class MainActivity extends AppCompatActivity {
                         openDayOFWeek(id);
                     }
                 };
+                if(isSecondWeek){
+                    result[0]=new ArrayList<>(result[0].subList(6,12));
+
+                }
+                else{
+                    result[0]=new ArrayList<>(result[0].subList(0,6));
+                }
                 TableAdapt tableAdapt=new TableAdapt(context,result[0], onItemCickList);
                 recyclerView.setAdapter(tableAdapt);
             }
@@ -76,6 +98,8 @@ public class MainActivity extends AppCompatActivity {
     private void openDayOFWeek(long id){
         Intent intent=new Intent(this,DayOfWeekActivity.class);
         intent.putExtra("id",id);
+        intent.putExtra("week",isSecondWeek);
         startActivity(intent);
+        finish();
     }
 }

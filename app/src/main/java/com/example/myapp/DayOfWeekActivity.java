@@ -1,14 +1,16 @@
 package com.example.myapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class DayOfWeekActivity extends AppCompatActivity {
+    boolean isSecondWeek;
      EditText dayOfWeek;
      EditText timeOfLessonsOne;
      EditText timeOfLessonsTwo;
@@ -25,6 +27,7 @@ public class DayOfWeekActivity extends AppCompatActivity {
      EditText lessonSix;
      EditText lessonSeven;
      Button saveButton;
+     long id;
     @Override
     protected void onCreate(Bundle bundle){
         super.onCreate(bundle);
@@ -48,7 +51,10 @@ public class DayOfWeekActivity extends AppCompatActivity {
         lessonSeven=findViewById(R.id.tv_lesson_seven);
 
         saveButton=findViewById(R.id.button_save);
-        onData(getIntent().getExtras().getLong("id"),this);
+        id=getIntent().getExtras().getLong("id");
+
+        onData(id,this);
+        isSecondWeek =getIntent().getExtras().getBoolean("week");
 
     }
 
@@ -76,11 +82,34 @@ public class DayOfWeekActivity extends AppCompatActivity {
             }
         };
         DataBase.newInstance().loadItem(loadingItemCallBack, id);
+    }
+    public void saveData(View view){
+        ListItem listItem=new ListItem(lessonOne.getText().toString(),
+                lessonTwo.getText().toString(),
+                lessonThree.getText().toString(),
+                lessonFour.getText().toString(),
+                lessonFive.getText().toString(),
+                lessonSix.getText().toString(),
+                lessonSeven.getText().toString(),
+                timeOfLessonsOne.getText().toString(),
+                timeOfLessonsTwo.getText().toString(),
+                timeOfLessonsThree.getText().toString(),
+                timeOfLessonsFour.getText().toString(),
+                timeOfLessonsFive.getText().toString(),
+                timeOfLessonsSix.getText().toString(),
+                timeOfLessonsSeven.getText().toString(),
+                dayOfWeek.getText().toString());
+                listItem.setId(id);
 
-
-
-
-
-
+        new Thread( new Runnable() {
+            @Override
+            public void run() {
+                DataBase.newInstance().update(listItem);
+            }
+        }).start();
+        Intent intent=new Intent(this,MainActivity.class);
+        intent.putExtra("week", isSecondWeek);
+        startActivity(intent);
+        finish();
     }
 }

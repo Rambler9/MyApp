@@ -52,6 +52,10 @@ EntityDao entityDao=appDataBase.entityDao();
             entityDao.insert(item);
         }
     }
+    public void update(ListItem listItem){
+        AppDataBase appDataBase=MyApp.getInstance().getDataBase();
+        appDataBase.entityDao().update(listItem);
+    }
 
     private static class DataItemLoaderAsyngTask extends AsyncTask<
             Void, Void, ListItem>{
@@ -75,6 +79,7 @@ EntityDao entityDao=appDataBase.entityDao();
             loadingCallBack.update(list);
         }
     }
+
 
 }
 
