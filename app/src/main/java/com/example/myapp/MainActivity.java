@@ -25,8 +25,11 @@ boolean isSecondWeek;
         firstWeek=findViewById(R.id.weekOne);
         secondWeek=findViewById(R.id.weekTwo);
 
-            isSecondWeek=getIntent().getExtras().getBoolean("week",false);
 
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            isSecondWeek = extras.getBoolean("week", false);
+        }
         if(isSecondWeek){
             secondWeek.setEnabled(true);
             firstWeek.setEnabled(false);
