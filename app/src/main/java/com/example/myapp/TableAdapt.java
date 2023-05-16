@@ -15,7 +15,7 @@ import java.util.List;
 public class TableAdapt extends RecyclerView.Adapter<TableAdapt.TableAdaptViewHolder>
 {
     private final LayoutInflater layoutInflater;
-    private final List<ListItem> listItemList;
+    private List<ListItem> listItemList;
     private final OnItemCickList onItemCickList;
     TableAdapt(Context context, List<ListItem> listItemList, OnItemCickList onItemCickList)
     {
@@ -61,6 +61,10 @@ public class TableAdapt extends RecyclerView.Adapter<TableAdapt.TableAdaptViewHo
     @Override
     public int getItemCount() {
         return listItemList.size();
+    }
+
+    public void setList(List<ListItem> listItemList) {
+        this.listItemList=listItemList;
     }
 
     public class TableAdaptViewHolder extends RecyclerView.ViewHolder

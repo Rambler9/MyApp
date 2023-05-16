@@ -107,6 +107,15 @@ public class DayOfWeekActivity extends AppCompatActivity {
                 DataBase.newInstance().update(listItem);
             }
         }).start();
+        startMainActivity();
+    }
+
+    @Override
+    public void onBackPressed() {
+        startMainActivity();
+    }
+
+    private void startMainActivity() {
         Intent intent=new Intent(this,MainActivity.class);
         intent.putExtra("week", isSecondWeek);
         startActivity(intent);
