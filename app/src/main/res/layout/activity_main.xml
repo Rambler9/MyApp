@@ -5,9 +5,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:orientation="horizontal"
+    >
+    <Button
+        android:layout_width="0dp"
+        app:layout_constraintHorizontal_weight="1"
+        android:layout_height="match_parent"
+        android:id="@+id/weekOne"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/weekTwo"
+        android:text="Чётная неделя"
+        android:layout_margin="5dp"/>
+    <Button
+        android:layout_width="0dp"
+        app:layout_constraintHorizontal_weight="1"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/weekOne"
+        android:id="@+id/weekTwo"
+        android:text="Нечётная неделя"
+        android:layout_margin="5dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
 
-    <view class="androidx.appcompat.app.AlertController$RecycleListView"
+
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/wv_table"
+        android:layout_marginTop="60dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
