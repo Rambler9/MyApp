@@ -26,7 +26,7 @@
         <TextView
             android:id="@+id/tv_time_first_lesson"
             android:layout_width="80dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:background="@drawable/textview_border"
             android:gravity="center"
             android:text="8:00\n10:25" />
@@ -34,7 +34,7 @@
         <TextView
             android:id="@+id/tv_lesson_one"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/textview_border"
             android:gravity="center"
@@ -50,7 +50,7 @@
         <TextView
             android:id="@+id/tv_time_second_lesson"
             android:layout_width="80dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:background="@drawable/textview_border"
             android:gravity="center"
             android:text="10:40\n12:15" />
@@ -58,7 +58,7 @@
         <TextView
             android:id="@+id/tv_lesson_two"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/textview_border"
             android:gravity="center"
@@ -74,7 +74,7 @@
         <TextView
             android:id="@+id/tv_time_third_lesson"
             android:layout_width="80dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:background="@drawable/textview_border"
             android:gravity="center"
             android:text="13:15\n14:50" />
@@ -82,7 +82,7 @@
         <TextView
             android:id="@+id/tv_lesson_three"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/textview_border"
             android:gravity="center"
@@ -97,7 +97,7 @@
     <TextView
         android:id="@+id/tv_time_fourth_lesson"
         android:layout_width="80dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@drawable/textview_border"
         android:gravity="center"
         android:text="15:00\n16:35" />
@@ -105,7 +105,7 @@
     <TextView
         android:id="@+id/tv_lesson_four"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         android:background="@drawable/textview_border"
         android:gravity="center"
@@ -118,7 +118,7 @@
     <TextView
         android:id="@+id/tv_time_fifth_lesson"
         android:layout_width="80dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@drawable/textview_border"
         android:gravity="center"
         android:text="16:45\n18:20" />
@@ -126,7 +126,7 @@
     <TextView
         android:id="@+id/tv_lesson_five"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         android:background="@drawable/textview_border"
         android:gravity="center"
@@ -140,7 +140,7 @@
     <TextView
         android:id="@+id/tv_time_sixth_lesson"
         android:layout_width="80dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@drawable/textview_border"
         android:gravity="center"
         android:text="18:30\n20:05" />
@@ -148,7 +148,7 @@
     <TextView
         android:id="@+id/tv_lesson_six"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         android:background="@drawable/textview_border"
         android:gravity="center"
@@ -157,12 +157,12 @@
 
     <TableRow
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/tv_time_seventh_lesson"
         android:layout_width="80dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@drawable/textview_border"
         android:gravity="center"
         android:text="20:15\n21:50" />
@@ -170,7 +170,7 @@
     <TextView
         android:id="@+id/tv_lesson_seven"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         android:background="@drawable/textview_border"
         android:gravity="center"
