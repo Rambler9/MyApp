@@ -118,7 +118,7 @@ public class DayOfWeekActivity extends AppCompatActivity {
     private void startMainActivity() {
         Intent intent=new Intent(this,MainActivity.class);
         intent.putExtra("week", isSecondWeek);
-        startActivity(intent);
         finish();
+        startActivity(intent);
     }
 }

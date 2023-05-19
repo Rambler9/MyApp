@@ -138,10 +138,10 @@ public class MainActivity extends AppCompatActivity {
 
     private List<ListItem> daysInCurrentWeek(List<ListItem> allDays){
         if (isSecondWeek) {
-            return  new ArrayList<>(allDays.subList(6, 12));
+            return  new ArrayList<>(allDays.subList(allDays.size()/2, allDays.size()));
 
         }
-            return new ArrayList<>(allDays.subList(0, 6));
+            return new ArrayList<>(allDays.subList(0, allDays.size()/2));
 
     }
 
@@ -150,8 +150,6 @@ public class MainActivity extends AppCompatActivity {
             secondWeek.setBackgroundColor(getResources().getColor(R.color.purple_500));
             firstWeek.setBackgroundColor(getResources().getColor(R.color.border));
         } else {
-//            firstWeek.setEnabled(true);
-//            secondWeek.setEnabled(false);
             secondWeek.setBackgroundColor(getResources().getColor(R.color.border));
             firstWeek.setBackgroundColor(getResources().getColor(R.color.purple_500));
         }
